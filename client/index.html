@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El clásico, Piedra, Papel o Tijera</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="./client.js"></script>
+</head>
+<body>
+    <h1>Bienvenidos a Nuestro Clásico Juego: Piedra, Papel, Tijera</h1>
+    <div id="initial">
+        <button onclick="createGame()">Crear Juego</button>
+        <div>o</div>
+        <input type="text" name="" id="roomUniqueId">
+        <button onclick="joinGame()">Unirse a un Juego</button>
+    </div>
+    <div id="gamePlay">
+        <div id="waitingArea">
+
+        </div>
+        <div id="gameArea" style="display: none;">
+            Elije:
+            <div id="player1Choice">
+                <button onclick="sendChoice('Piedra')">Piedra</button>
+                <button onclick="sendChoice('Papel')">Papel</button>
+                <button onclick="sendChoice('Tijera')">Tijera</button>
+            </div>
+            Oponente:
+                <div id="player2Choice">
+                    <p id="opponentState">Esperando oponente</p>
+                </div>
+        </div>
+        <div id="winnerArea">
+
+        </div>
+    </div>
+</body>
+</html>
